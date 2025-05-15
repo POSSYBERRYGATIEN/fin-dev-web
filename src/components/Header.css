@@ -1,0 +1,78 @@
+/* src/components/Header.css */
+
+.main-header {
+  background-color: #f8f8f8; /* Couleur de fond claire de l'en-tête */
+  padding: 1rem 0; /* Espacement vertical de l'en-tête */
+  border-bottom: 1px solid #aecc05; /* Bordure inférieure légère */
+  
+  /* Ajout pour fixer l'en-tête */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100; /* Assure que l'en-tête est au-dessus des autres éléments */
+  transition: background-color 0.3s ease; /* Transition douce */
+}
+
+/* Espace réservé sous le header pour le contenu */
+body {
+  margin: 0; /* Supprime le margin par défaut */
+  padding-top: 80px; /* Réserve un espace en haut pour compenser la hauteur de l'en-tête */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.main-navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.main-navigation ul li {
+  margin-left: 1.5rem;
+}
+
+.main-navigation ul li:first-child {
+  margin-left: 0;
+}
+
+.main-navigation ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.main-navigation ul li a:hover {
+  color: #007bff;
+}
+
+/* Correction pour les petits écrans */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .main-navigation ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-navigation ul li {
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+  }
+}
