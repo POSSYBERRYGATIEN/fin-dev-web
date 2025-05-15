@@ -4,15 +4,18 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  build: {
+    outDir: 'dist', // Répertoire de sortie
+  },
   server: {
-    host: true, // Permet d'accéder depuis d'autres appareils sur le réseau
-    port: 3000, // Port que tu utilises
-    strictPort: true, // Ne changera pas de port si 3000 est occupé
-    hmr: {
-      protocol: 'ws',
-      host: 'localhost',
-      port: 3000, // Utiliser le même port pour WebSocket
+    port: 3000, // Port de développement local
+    host: true, // Permet les connexions externes
+  },
+  resolve: {
+    alias: {
+      '@': '/src', // Alias pour faciliter les importations
     },
   },
 });
+
 
